@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scratch.css">
+    <script src = "petsClient.js"></script>
+    <title>Contact Us</title>
+</head>
+<body onload="startTime()">
+
+    <header>
+        <h1>Adopt a Pet</h1>
+        <a href="home">
+            <img src="images/catAndDog.jpeg" alt="catAndDog" width="150" height="70">
+        </a>
+            
+    <p id="getTime"></p>
+    <p id="getDate"></p>
+    <script>
+
+        document.getElementById("getDate").innerHTML = getCurrentDate();
+
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
+        <br>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="createAccount">Create an Account</a></li>
+            <li><a href="login">Login to your Account</a></li>
+            <li><a href="findPet">Find a dog/cat</a></li>
+            <li><a href="dogCare">Dog Care</a></li>
+            <li><a href="catCare">Cat Care</a></li>
+            <li><a href="giveAway">Have a pet to give away</a></li>
+            <li><a href="contactUs">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        
+    </aside>
+
+    <article>
+        <h2>Contact Us</h2>
+        <p>You can call us for any questions or requests at +1(438)321-3210, or email us at adoptYourPet@gmail.com</p>
+    </article>
+
+    <footer>
+        <p>© 2024 Your Website Name. All rights reserved. | <a href="#" style="color: white;">Privacy/Disclaimer Statement</a></p>
+        <p>We promise that your information will not be sold or misused. We are not responsible for any incorrect information posted by pet owners.</p>
+    </footer>
+</body>
+</html>

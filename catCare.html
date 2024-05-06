@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scratch.css">
+    <script src = "petsClient.js"></script>
+    <title>Cat Care</title>
+</head>
+<body onload="startTime()">
+
+    <header>
+        <h1>Adopt a Pet</h1>
+        <a href="home">
+            <img src="images/catAndDog.jpeg" alt="catAndDog" width="150" height="70">
+        </a>
+            
+    <p id="getTime"></p>
+    <p id="getDate"></p>
+    <script>
+
+        document.getElementById("getDate").innerHTML = getCurrentDate();
+
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
+        <br>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="createAccount">Create an Account</a></li>
+            <li><a href="login">Login to your Account</a></li>
+            <li><a href="findPet">Find a dog/cat</a></li>
+            <li><a href="dogCare">Dog Care</a></li>
+            <li><a href="catCare">Cat Care</a></li>
+            <li><a href="giveAway">Have a pet to give away</a></li>
+            <li><a href="contactUs">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        
+    </aside>
+
+    <article>
+        <h2>Cat Care</h2>
+        <p>
+            <ol>
+                <li>Feeding Your Cat
+                    <ul style="list-style-type:circle;">
+                        <li>Provide your cat with a high-quality, protein-rich diet¹.</li>
+                            <li>When your cat is young, they will need kitten chow explicitly designed for their life stage¹.</li>
+                                <li>They should have ready access to fresh water¹.</li>
+                                    </ul></li>
+                <li>Providing a Comfortable Environment
+                    <ul style="list-style-type:circle;">
+                        <li>Your cat should be provided with an appropriate, comfortable environment to live in, which includes shelter and a comfortable resting area¹.</li>
+                            <li>It is important that cats feel safe and comfortable in their homes¹.</li></ul></li>
+                <li>Health and Hygiene
+                    <ul style="list-style-type:circle;">
+                        <li>Your cat should never be hurt, especially at the hands of you¹.</li>
+                            <li>If they show any signs of pain or illness they need to be taken to the vet as soon as possible for rapid diagnosis and treatment¹.</li>
+                                <li>Regular grooming is important for your cat's overall health⁴.</li>
+                                    <li>This includes brushing their fur, cleaning their ears, and trimming their nails³.</li>
+                    </ul>
+                <li>Behavior and Mental Health
+                    <ul style="list-style-type:circle;">
+                        <li>Your cat should be free to express normal feline behaviors in their own home¹.</li>
+                            <li>For example, cats need to be provided with suitable scratching posts, vertical spaces that they can climb on, and opportunities for play so they have an outlet for their normal ‘hunting’ behaviors of stalk, pounce, and attack¹.</li>
+                                <li>It is important that your cat’s environment and treatment also avoids any mental suffering¹.</li>
+                        </ul>
+                </li>
+                <li>Veterinary Care
+                    <ul style="list-style-type:circle;">
+                        <li>Make sure your cat has the proper veterinary care⁵.</li>
+                            <li>Your vet can provide vaccinations, perform routine health checks, and offer advice on care².</li></ul>
+                </li>
+                <li>Safe Environment
+                    <ul style="list-style-type:circle;">
+                        <li>Make sure your dog has a comfortable living environment².</li>
+                            <li>This includes a safe space to sleep and play.</li></ul>
+                </li>
+        
+            </ol>
+            <br>
+            Remember, caring for a cat is a big responsibility, and cat ownership is not something to enter into lightly¹. However, this work will help you to successfully build a bond of love and trust with an important new member of your family¹.
+            <br><br>
+            
+            Sources:
+            (1) How to Take Care of a Cat: Vet-Approved Beginner’s Guide. https://www.catster.com/guides/how-to-take-care-of-a-cat/.
+            (2) How to Take Care of a Cat: 7 Vet-Recommended Tips | BetterVet. https://bettervet.com/resources/pet-health-care/how-to-take-care-of-a-cat.
+            (3) Cat Care 101: A Guide for New Cat Owners - PetHelpful. https://pethelpful.com/cats/cat-care-101.
+            (4) Cat Health Guide: Kitten to Senior Cat | PetMD. https://www.petmd.com/cat/general-health/complete-cat-health-guide-every-life-stage.
+            (5) The 10 Most Important Beginner Cat Care Rules to Follow. https://cats.com/cat-care-for-beginners.
+    </article>
+
+    <footer>
+        <p>© 2024 Your Website Name. All rights reserved. | <a href="#" style="color: white;">Privacy/Disclaimer Statement</a></p>
+        <p>We promise that your information will not be sold or misused. We are not responsible for any incorrect information posted by pet owners.</p>
+    </footer>
+</body>
+</html>

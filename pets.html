@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scratch.css">
+    
+    <script src = "petsClient.js"></script>
+
+    <title>Browse for Pets</title>
+</head>
+
+<body onload="startTime()">
+
+    <header>
+        <h1>Adopt a Pet</h1>
+        <a href="home">
+            <img src="images/catAndDog.jpeg" alt="catAndDog" width="150" height="70">
+        </a>
+            
+    <p id="getTime"></p>
+    <p id="getDate"></p>
+    <script>
+
+        document.getElementById("getDate").innerHTML = getCurrentDate();
+
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
+        <br>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="createAccount">Create an Account</a></li>
+            <li><a href="login">Login to your Account</a></li>
+            <li><a href="findPet">Find a dog/cat</a></li>
+            <li><a href="dogCare">Dog Care</a></li>
+            <li><a href="catCare">Cat Care</a></li>
+            <li><a href="giveAway">Have a pet to give away</a></li>
+            <li><a href="contactUs">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        
+    </aside>
+
+    <article>
+        <p>
+            <h2>Browse Available Pets</h2>
+            <b>Fluffy:</b>
+            <img src="images/kitten.jpeg" width="250" height="166" alt="fluffy">
+                <ul style="list-style-type:circle;">
+                    <li>Species: Cat</li>
+                    <li>Breed: Maine Coon</li>
+                    <li>Gender: Female</li>
+                    <li>Age: 2 months</li>
+                    <li>Description: Fluffy is a friendly and playful cat. She loves to chase laser pointers and curl up in warm spots. She’s spayed, vaccinated, and ready to find her forever home.</li>
+                </ul>
+                <input type="button" value="Interested" class="Button" style="color: #ffffff; background-color: #16a7d3; border-color: #eeeeee;"/>
+                <br>
+                <b>Rex:</b>
+                <img src="images/goldenDog.jpeg" alt="rex">
+                <ul style="list-style-type:circle;">
+                    <li>Species: Dog</li>
+                    <li>Breed: Golden Retriever</li>
+                    <li>Gender: Male</li>
+                    <li>Age: 3 years</li>
+                    <li>Description:  Rex is a loyal and energetic dog. He loves long walks and playing fetch. He’s neutered, vaccinated, and looking for a family who loves outdoor activities.</li>
+                    
+                </ul>
+                <input type="button" value="Interested" class="Button" style="color: #ffffff; background-color: #16a7d3; border-color: #eeeeee;"/>
+                <br>
+                <b>Whiskers:</b>
+                <img src="images/siamese-cat.jpg" width="200" height="133" alt="whiskers">
+                <ul style="list-style-type:circle;">
+                    <li>Species: Cat</li>
+                    <li>Breed: Siamese</li>
+                    <li>Gender: Male</li>
+                    <li>Age: 4 years</li>
+                    <li>Description:Whiskers is a calm and affectionate cat. He enjoys quiet environments and gentle petting. He’s neutered, vaccinated, and ready to bring tranquility to his new home.</li>
+                    
+                </ul>
+                <input type="button" value="Interested" class="Button" style="color: #ffffff; background-color: #16a7d3; border-color: #eeeeee;"/>
+                <br>  
+            
+    </article>
+
+    <footer>
+        <p>© 2024 Your Website Name. All rights reserved. | <a href="#" style="color: white;">Privacy/Disclaimer Statement</a></p>
+        <p>We promise that your information will not be sold or misused. We are not responsible for any incorrect information posted by pet owners.</p>
+    </footer>
+</body>
+</html>

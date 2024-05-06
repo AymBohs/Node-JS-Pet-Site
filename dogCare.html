@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scratch.css">
+    <script src = "petsClient.js"></script>
+    <title>Dog Care</title>
+</head>
+<body onload="startTime()">
+
+    <header>
+        <h1>Adopt a Pet</h1>
+        <a href="home">
+            <img src="images/catAndDog.jpeg" alt="catAndDog" width="150" height="70">
+        </a>
+            
+    <p id="getTime"></p>
+    <p id="getDate"></p>
+    <script>
+
+        document.getElementById("getDate").innerHTML = getCurrentDate();
+
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+        </script>
+
+        <br>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="createAccount">Create an Account</a></li>
+            <li><a href="login">Login to your Account</a></li>
+            <li><a href="findPet">Find a dog/cat</a></li>
+            <li><a href="dogCare">Dog Care</a></li>
+            <li><a href="catCare">Cat Care</a></li>
+            <li><a href="giveAway">Have a pet to give away</a></li>
+            <li><a href="contactUs">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        
+    </aside>
+
+    <article>
+        <h2>Dog Care</h2>
+        <p>
+            <ol>
+                <li>Feeding Your Dog
+                    <ul style="list-style-type:circle;">
+                        <li>Feed your dog a high-quality dog food twice a day¹².</li>
+                            <li>The first couple of ingredients should be some kind of meat, not meat by-product or a grain¹.</li>
+                                <li>Avoid giving your dog an excessive amount of treats or people food¹.</li>
+                                    <li>Do not give your dog any chocolate, avocado, bread dough, raisins, grapes, onions, or xylitol¹.</li>
+                                        <li>Give your dog open access to water at all times¹.</li></ul></li>
+                <li>Exercise Needs
+                    <ul style="list-style-type:circle;">
+                        <li>Ensure your dogs exercise regularly, between 30 minutes and two hours daily².</li>
+                            <li>You should also give your dog plenty of exercise by taking it on at least 2 walks a day¹.</li></ul></li>
+                <li>Grooming
+                    <ul style="list-style-type:circle;">
+                        <li>Regular grooming is important for your dog's overall health³.</li>
+                            <li>This includes brushing their fur, cleaning their ears, and trimming their nails.</li></ul>
+                </li>
+                <li>Health Check-ups
+                    <ul style="list-style-type:circle;">
+                        <li>Regular veterinary check-ups are crucial to ensure your dog's health².</li>
+                            <li>Your vet can provide vaccinations, perform routine health checks, and offer advice on care.</li></ul>
+                </li>
+                <li>Training
+                    <ul style="list-style-type:circle;">
+                        <li>Training your dog can help prevent behavioral problems.</li>
+                            <li>This can include basic commands like sit, stay, and come.</li></ul>
+                </li>
+                <li>Safe Environment
+                    <ul style="list-style-type:circle;">
+                        <li>Make sure your dog has a comfortable living environment².</li>
+                            <li>This includes a safe space to sleep and play.</li></ul>
+                </li>
+        
+            </ol>
+            <br>
+            Remember, caring for a dog is a big responsibility, and dog ownership is not something to enter into lightly¹.<br> However, this work will help you to successfully build a bond of love and trust with an important new member of your family¹.
+            <br><br>
+            Sources:
+            (1) How to Take Care of a Dog (with Pictures) - wikiHow Pet. https://www.wikihow.pet/Take-Care-of-a-Dog.
+            (2) How to Take Care of a Dog: 8 Vet-Recommended Tips. https://bettervet.com/resources/pet-health-care/how-to-take-care-of-a-dog.
+            (3) How to Keep Your Dog Healthy - American Kennel Club. https://www.akc.org/expert-advice/health/how-to-keep-your-dog-healthy/.
+    </article>
+
+    <footer>
+        <p>© 2024 Your Website Name. All rights reserved. | <a href="#" style="color: white;">Privacy/Disclaimer Statement</a></p>
+        <p>We promise that your information will not be sold or misused. We are not responsible for any incorrect information posted by pet owners.</p>
+    </footer>
+</body>
+</html>

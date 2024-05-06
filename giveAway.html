@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scratch.css">
+    <script src = "petsClient.js"></script>
+    <title>Petshop</title>
+</head>
+<body onload="startTime()">
+
+    <header>
+        <h1>Adopt a Pet</h1>
+        <a href="home">
+            <img src="images/catAndDog.jpeg" alt="catAndDog" width="150" height="70">
+        </a>
+            
+    <p id="getTime"></p>
+    <p id="getDate"></p>
+    <script>
+
+        document.getElementById("getDate").innerHTML = getCurrentDate();
+
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('getTime').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+
+        function validateForm()
+        {
+            let errMsgP = document.getElementById('errMsg');
+            errMsgP.innerHTML = "";
+            let breed = document.getElementById('breed').value;
+            let petType = document.getElementById('petType').value;
+            let age = document.getElementById('age').value;
+            let gender = document.getElementById('gender').value;
+            let ownerName = document.getElementById('ownerName').value;
+            let ownerEmail = document.getElementById('ownerEmail').value;
+
+            if (breed == "")
+                errMsgP.innerHTML = "Please fill all fields!";
+            if (petType == "-")
+                errMsgP.innerHTML = "Please fill all fields!";
+            if (age == "-")
+                errMsgP.innerHTML = "Please fill all fields!";
+            if (gender == "-")
+                errMsgP.innerHTML = "Please fill all fields!";
+            if (ownerName == "")
+                errMsgP.innerHTML = "Please fill all fields!";
+            if (ownerEmail == "")
+                errMsgP.innerHTML = "Please fill all fields!";
+            
+            ValidateEmail(ownerEmail);
+        }
+
+        function ValidateEmail(input)
+        {
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (!(input.match(validRegex)))
+            {
+              alert("Invalid email address!");
+              return false;
+            }
+        }
+
+        </script>
+
+        <br>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="createAccount">Create an Account</a></li>
+            <li><a href="login">Login to your Account</a></li>
+            <li><a href="findPet">Find a dog/cat</a></li>
+            <li><a href="dogCare">Dog Care</a></li>
+            <li><a href="catCare">Cat Care</a></li>
+            <li><a href="giveAway">Have a pet to give away</a></li>
+            <li><a href="contactUs">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        
+    </aside>
+
+    <article>
+        <h2>Have a pet to give away?</h2>
+        <p id="errMsg" style="color:red"></p>
+        <p>
+
+            <form method = "post" action= "/giveAwaySubmit">
+                <label for="petType">Cat or Dog:</label><br>
+                <select id="petType" name="petType">
+                    <option label="-" value="-"></option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select><br>
+                <label for="breed">Breed:</label><br>
+                <input type="text" id="breed" name="breed" placeholder="Enter breed or 'Mix Breed'"><br>
+                <label for="age">Age:</label><br>
+                <select id="age" name="age">
+                    <option label="-" value="-"></option>
+                    <option value="puppyKitten">Puppy/Kitten</option>
+                    <option value="young">Young</option>
+                    <option value="adult">Adult</option>
+                    <option value="senior">Senior</option>
+                </select><br>
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender">
+                    <option label="-" value="-"></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+                <label>Compatibility:</label><br>
+                <input type="checkbox" id="dogs" value="Gets along with other dogs" name="compatibility">
+                <label for="dogs">Gets along with other dogs</label><br>
+                <input type="checkbox" id="cats" value="Gets along with other cats" name="compatibility">
+                <label for="cats">Gets along with other cats</label><br>
+                <input type="checkbox" id="children" value="Gets along with small children" name="compatibility">
+                <label for="children">Suitable for a family with small children</label><br>
+                <label for="comments">Comments:</label><br>
+                <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br>
+                <label for="ownerName">Owner's Name:</label><br>
+                <input type="text" id="ownerName" name="ownerName" placeholder="Enter owner's name"><br>
+                <label for="ownerEmail">Owner's Email:</label><br>
+                <input type="email" id="ownerEmail" name="ownerEmail" placeholder="Enter owner's email"><br>
+                <input type="submit" value="Submit" onclick="validateForm()">
+                <input type="reset" value="Clear">
+            </form>
+
+    </article>
+
+    <footer>
+        <p>© 2024 Your Website Name. All rights reserved. | <a href="#" style="color: white;">Privacy/Disclaimer Statement</a></p>
+        <p>We promise that your information will not be sold or misused. We are not responsible for any incorrect information posted by pet owners.</p>
+    </footer>
+</body>
+</html>
